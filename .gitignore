@@ -31,6 +31,5 @@ logs/
 
 # PyInstaller artifacts
 *.spec
-wofa/
 videos/
 uv.lock

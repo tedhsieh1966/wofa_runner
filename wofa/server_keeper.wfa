@@ -1,0 +1,1604 @@
+{
+    "name": "專案",
+    "workflow": {
+        "enum_node_value": "workflow",
+        "name": "_workflow",
+        "output_variables_key": [],
+        "next_nodes_number": 1,
+        "list_next_node_key": [
+            ""
+        ],
+        "parent_key": "",
+        "inside_iteration": false,
+        "start_node_key": "start"
+    },
+    "llms_api": {
+        "gemini-2.5-flash": {
+            "enum_llm": "gemini-2.5-flash",
+            "api_key": "",
+            "temperature": 0.7,
+            "context_length": 2048,
+            "timeout": 0
+        },
+        "deepseek-chat": {
+            "enum_llm": "deepseek-chat",
+            "api_key": "",
+            "temperature": 0.7,
+            "context_length": 2048,
+            "timeout": 0
+        }
+    },
+    "knowledge_collections": null,
+    "global_variables": {
+        "user_prompt": {
+            "name": "user_prompt",
+            "default_value": "",
+            "value_type": "string",
+            "is_constant": false
+        },
+        "list_user_file": {
+            "name": "list_user_file",
+            "default_value": [],
+            "value_type": "list",
+            "is_constant": false
+        },
+        "user_metadata": {
+            "name": "user_metadata",
+            "default_value": {},
+            "value_type": "dict",
+            "is_constant": false
+        },
+        "LLM_reply": {
+            "name": "LLM_reply",
+            "default_value": null,
+            "value_type": "string",
+            "is_constant": false
+        },
+        "checklist": {
+            "name": "checklist",
+            "default_value": [],
+            "value_type": "list",
+            "is_constant": false
+        },
+        "check_item": {
+            "name": "check_item",
+            "default_value": null,
+            "value_type": "string",
+            "is_constant": false
+        },
+        "index_item": {
+            "name": "index_item",
+            "default_value": 0,
+            "value_type": "int",
+            "is_constant": false
+        },
+        "list_terminal_commands": {
+            "name": "list_terminal_commands",
+            "default_value": [],
+            "value_type": "list",
+            "is_constant": false
+        },
+        "terminal_output": {
+            "name": "terminal_output",
+            "default_value": null,
+            "value_type": "string",
+            "is_constant": false
+        },
+        "review_report": {
+            "name": "review_report",
+            "default_value": {},
+            "value_type": "dict",
+            "is_constant": false
+        },
+        "index_branch": {
+            "name": "index_branch",
+            "default_value": 0,
+            "value_type": "int",
+            "is_constant": false
+        },
+        "ai_prompt": {
+            "name": "ai_prompt",
+            "default_value": null,
+            "value_type": "string",
+            "is_constant": false
+        },
+        "user_input": {
+            "name": "user_input",
+            "default_value": null,
+            "value_type": "string",
+            "is_constant": false
+        },
+        "all_conclusion": {
+            "name": "all_conclusion",
+            "default_value": [],
+            "value_type": "list",
+            "is_constant": false
+        },
+        "final_conclusion": {
+            "name": "final_conclusion",
+            "default_value": null,
+            "value_type": "string",
+            "is_constant": false
+        },
+        "history": {
+            "name": "history",
+            "default_value": [],
+            "value_type": "list",
+            "is_constant": false
+        },
+        "job_instructions": {
+            "name": "job_instructions",
+            "default_value": null,
+            "value_type": "string",
+            "is_constant": false
+        },
+        "general_guide": {
+            "name": "general_guide",
+            "default_value": "",
+            "value_type": "string",
+            "is_constant": false
+        },
+        "skills_description": {
+            "name": "skills_description",
+            "default_value": "",
+            "value_type": "string",
+            "is_constant": false
+        },
+        "skills_brief": {
+            "name": "skills_brief",
+            "default_value": "",
+            "value_type": "string",
+            "is_constant": false
+        }
+    },
+    "controller_node_graphic": {
+        "start": {
+            "node": {
+                "enum_node_value": "start",
+                "name": "start",
+                "output_variables_key": [],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "python_code_executor3"
+                ],
+                "parent_key": "_workflow",
+                "frequency": 0,
+                "list_DOW": [],
+                "list_DOM": [],
+                "times": []
+            },
+            "graphic": {
+                "node_key": "start",
+                "x": 135.0,
+                "y": 29.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 85.0,
+                    "knot_y": 29.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 81.0,
+                    "line_to_y": 29.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 135.0,
+                        "knot_y": 54.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "start",
+                        "node_key_to": "python_code_executor3",
+                        "line_from_x": 135.0,
+                        "line_from_y": 58.0,
+                        "line_to_x": 135.0,
+                        "line_to_y": 96.0
+                    }
+                ],
+                "is_input_knot_left": true,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "end": {
+            "node": {
+                "enum_node_value": "end",
+                "name": "end",
+                "output_variables_key": [
+                    "user_prompt"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    ""
+                ],
+                "parent_key": "_workflow",
+                "answer_composer": "answer = f\"the answer is {LLM_reply}\"",
+                "is_publish": false
+            },
+            "graphic": {
+                "node_key": "end",
+                "x": 918.0,
+                "y": 479.0,
+                "width": 100,
+                "height": 50.0,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 918.0,
+                    "knot_y": 454.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 918.0,
+                    "line_to_y": 450.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 968.0,
+                        "knot_y": 479.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "end",
+                        "node_key_to": null,
+                        "line_from_x": 972.0,
+                        "line_from_y": 479.0,
+                        "line_to_x": 0,
+                        "line_to_y": 0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": true,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "ask_llm": {
+            "node": {
+                "enum_node_value": "ask_llm",
+                "name": "ask_llm",
+                "output_variables_key": [
+                    "checklist"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "iteration"
+                ],
+                "parent_key": "_workflow",
+                "llm_api_key": "deepseek-chat",
+                "list_llm_api_key": null,
+                "is_multiple_llm": false,
+                "system_prompt": "",
+                "system_prompt_variable_key": null,
+                "system_prompt_filename": null,
+                "system_prompt_source_value": "scroll_text_editor",
+                "user_prompt": "Below is the general guide:\n$general_guide.\n\nBelow is the job instructions:\n$job_instructions\n\nPlease prepare a check list that you will follow later to inspect/diagnose/repair the server.  \nThe format is:\n[\"check_item1\", \"check_item2\",....]\n",
+                "user_prompt_variable_key": null,
+                "user_prompt_filename": null,
+                "user_prompt_source_value": "scroll_text_editor",
+                "list_filepath_variable_key": null,
+                "chat_history_variable_key": null,
+                "chat_max_turns_variable_key": null,
+                "prompt_max_length_variable_key": null,
+                "temperature": 1.2,
+                "is_stream": false,
+                "is_publish": false
+            },
+            "graphic": {
+                "node_key": "ask_llm",
+                "x": 426.0,
+                "y": 171.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 426.0,
+                    "knot_y": 146.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 426.0,
+                    "line_to_y": 142.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 426.0,
+                        "knot_y": 196.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "ask_llm",
+                        "node_key_to": "iteration",
+                        "line_from_x": 426.0,
+                        "line_from_y": 200.0,
+                        "line_to_x": 426.0,
+                        "line_to_y": 229.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "start1": {
+            "node": {
+                "enum_node_value": "start",
+                "name": "start1",
+                "output_variables_key": [],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "ask_llm1"
+                ],
+                "parent_key": "iteration",
+                "frequency": 0,
+                "list_DOW": [],
+                "list_DOM": [],
+                "times": []
+            },
+            "graphic": {
+                "node_key": "start1",
+                "x": 169.0,
+                "y": 341.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 119.0,
+                    "knot_y": 341.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 115.0,
+                    "line_to_y": 341.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 169.0,
+                        "knot_y": 366.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "start1",
+                        "node_key_to": "ask_llm1",
+                        "line_from_x": 169.0,
+                        "line_from_y": 370.0,
+                        "line_to_x": 169.0,
+                        "line_to_y": 406.0
+                    }
+                ],
+                "is_input_knot_left": true,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "end1": {
+            "node": {
+                "enum_node_value": "end",
+                "name": "end1",
+                "output_variables_key": [
+                    "all_conclusion"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    ""
+                ],
+                "parent_key": "iteration",
+                "answer_composer": "all_conclusion = all_conclusion or []\nconclusion = review_report['conclusion']\nif conclusion: all_conclusion.append(conclusion)",
+                "is_publish": false
+            },
+            "graphic": {
+                "node_key": "end1",
+                "x": 675.0,
+                "y": 564.0,
+                "width": 100,
+                "height": 50.0,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 625.0,
+                    "knot_y": 564.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 621.0,
+                    "line_to_y": 564.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 725.0,
+                        "knot_y": 564.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "end1",
+                        "node_key_to": null,
+                        "line_from_x": 729.0,
+                        "line_from_y": 564.0,
+                        "line_to_x": 0,
+                        "line_to_y": 0
+                    }
+                ],
+                "is_input_knot_left": true,
+                "is_output_knot_right": true,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "iteration": {
+            "node": {
+                "enum_node_value": "iteration",
+                "name": "iteration",
+                "output_variables_key": [],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "ask_llm4"
+                ],
+                "parent_key": "_workflow",
+                "array_name": "checklist",
+                "item_name": "check_item",
+                "item_index_name": "index_item",
+                "depth": 0,
+                "workflow": {
+                    "enum_node_value": "workflow",
+                    "name": "workflow",
+                    "output_variables_key": [],
+                    "next_nodes_number": 1,
+                    "list_next_node_key": [
+                        ""
+                    ],
+                    "parent_key": "iteration",
+                    "inside_iteration": true,
+                    "start_node_key": "start1"
+                }
+            },
+            "graphic": {
+                "node_key": "iteration",
+                "x": 426.0,
+                "y": 545.5,
+                "width": 714.0,
+                "height": 625.0,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 426.0,
+                    "knot_y": 233.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 426.0,
+                    "line_to_y": 229.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 783.0,
+                        "knot_y": 545.5,
+                        "knot_diameter": 8,
+                        "node_key_from": "iteration",
+                        "node_key_to": "ask_llm4",
+                        "line_from_x": 787.0,
+                        "line_from_y": 545.5,
+                        "line_to_x": 863.0,
+                        "line_to_y": 281.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": true,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "ask_llm1": {
+            "node": {
+                "enum_node_value": "ask_llm",
+                "name": "ask_llm1",
+                "output_variables_key": [
+                    "list_terminal_commands"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "python_code_executor2"
+                ],
+                "parent_key": "iteration",
+                "llm_api_key": "deepseek-chat",
+                "list_llm_api_key": null,
+                "is_multiple_llm": false,
+                "system_prompt": "",
+                "system_prompt_variable_key": null,
+                "system_prompt_filename": null,
+                "system_prompt_source_value": "scroll_text_editor",
+                "user_prompt": "Below is the general guide:\n$general_guide\n\nBelow is the job instructions:\n$job_instructions\n\nBelow is the history of terminal commands, your questions and user input:\n$history\n\nBelow is the check item you prepared earlier:\n$check_item\nCreate a list of terminal commands you need to inspect/diagnose the server.\nThe format is:\n[\"command1\", \"command2\",...] \nThe terminal output will be sent to you for reivew to determine further actions.\nDo not put too many commands, otherwise the terminal output might be too long to fit in the max tokens you can accept. You can always send more commands for clarification after reviewing the terminal reports.\n\n\n",
+                "user_prompt_variable_key": null,
+                "user_prompt_filename": null,
+                "user_prompt_source_value": "scroll_text_editor",
+                "list_filepath_variable_key": null,
+                "chat_history_variable_key": null,
+                "chat_max_turns_variable_key": null,
+                "prompt_max_length_variable_key": null,
+                "temperature": 1.2,
+                "is_stream": false,
+                "is_publish": false
+            },
+            "graphic": {
+                "node_key": "ask_llm1",
+                "x": 169.0,
+                "y": 435.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 169.0,
+                    "knot_y": 410.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 169.0,
+                    "line_to_y": 406.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 169.0,
+                        "knot_y": 460.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "ask_llm1",
+                        "node_key_to": "python_code_executor2",
+                        "line_from_x": 169.0,
+                        "line_from_y": 464.0,
+                        "line_to_x": 169.0,
+                        "line_to_y": 513.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "remote_shell": {
+            "node": {
+                "enum_node_value": "remote_shell",
+                "name": "remote_shell",
+                "output_variables_key": [
+                    "terminal_output"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "ask_llm2"
+                ],
+                "parent_key": "iteration",
+                "hostname": "ssh.syntak.net",
+                "username": "tedhsieh",
+                "password": "Tc-551220",
+                "port": 22,
+                "is_publish": true,
+                "list_command_source_value": "combo",
+                "list_command": null,
+                "list_command_variable_key": "list_terminal_commands",
+                "proxy_type": "cloudflare",
+                "proxy_host": "",
+                "proxy_port": 22,
+                "proxy_username": "",
+                "proxy_password": ""
+            },
+            "graphic": {
+                "node_key": "remote_shell",
+                "x": 322.0,
+                "y": 542.0,
+                "width": 100,
+                "height": 50.0,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 272.0,
+                    "knot_y": 542.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 268.0,
+                    "line_to_y": 542.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 372.0,
+                        "knot_y": 542.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "remote_shell",
+                        "node_key_to": "ask_llm2",
+                        "line_from_x": 376.0,
+                        "line_from_y": 542.0,
+                        "line_to_x": 451.0,
+                        "line_to_y": 308.0
+                    }
+                ],
+                "is_input_knot_left": true,
+                "is_output_knot_right": true,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "ask_llm2": {
+            "node": {
+                "enum_node_value": "ask_llm",
+                "name": "ask_llm2",
+                "output_variables_key": [
+                    "review_report"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "python_code_executor1"
+                ],
+                "parent_key": "iteration",
+                "llm_api_key": "deepseek-chat",
+                "list_llm_api_key": null,
+                "is_multiple_llm": false,
+                "system_prompt": "",
+                "system_prompt_variable_key": null,
+                "system_prompt_filename": null,
+                "system_prompt_source_value": "scroll_text_editor",
+                "user_prompt": "Below is the general guide:\n$general_guide\n\nBelow is the job instructions:\n$job_instructions\n\nBelow is the history of terminal commands, your questions and user input:\n$history\n\nDo not waste time on meaningless repeating of terminal commands.\n\nBelow is the check item you prepared earlier:\n$check_item\n\nBelow is the terminal commands you prepared to inspect/diagnose the server.\n$list_terminal_commands\n\nThe terminal output might be too long and will be showed the last.\n\nPlease review the terminal output to determine whether the job is done or the next steps to take.\nThe next steps include:\n1. Ask user to provide inputs or confirmation. Put your question or decription in \"question\".\n2. Further terminal commands. Put them in \"list_terminal_commands\".\n3. If the job is done, put a brief conclusion in \"conclusion\".\n\nThe format is:\n{\"review_report\":\n { \n  \"status\": \"done/ask_user_input/further_commands\",\n  \"list_terminal_commands\": [....],\n  \"question\":\"...\",\n  \"conclusion\": \"...\"\n }\n}\n\n\nThe terminal output is:\n$terminal_output",
+                "user_prompt_variable_key": null,
+                "user_prompt_filename": null,
+                "user_prompt_source_value": "scroll_text_editor",
+                "list_filepath_variable_key": null,
+                "chat_history_variable_key": null,
+                "chat_max_turns_variable_key": null,
+                "prompt_max_length_variable_key": null,
+                "temperature": 1.2,
+                "is_stream": false,
+                "is_publish": false
+            },
+            "graphic": {
+                "node_key": "ask_llm2",
+                "x": 505.0,
+                "y": 308.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 455.0,
+                    "knot_y": 308.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 451.0,
+                    "line_to_y": 308.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 505.0,
+                        "knot_y": 333.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "ask_llm2",
+                        "node_key_to": "python_code_executor1",
+                        "line_from_x": 505.0,
+                        "line_from_y": 337.0,
+                        "line_to_x": 505.0,
+                        "line_to_y": 381.0
+                    }
+                ],
+                "is_input_knot_left": true,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "branch": {
+            "node": {
+                "enum_node_value": "branch",
+                "name": "branch",
+                "output_variables_key": [],
+                "next_nodes_number": 3,
+                "list_next_node_key": [
+                    "end1",
+                    "python_code_executor",
+                    "remote_shell"
+                ],
+                "parent_key": "iteration",
+                "evaluater_code": "if isinstance(review_report, dict):\n    status = review_report.get(\"status\", \"done\")\nelse:\n    status = \"done\"\n\nindex_branch = {\n    \"ask_user_input\": 1,\n    \"further_commands\": 2,\n}.get(status, 0)  # 預設 0 (done)",
+                "number_of_branches": 3,
+                "index_branch_name": "index_branch",
+                "node_tail_key": null
+            },
+            "graphic": {
+                "node_key": "branch",
+                "x": 505.0,
+                "y": 509.0,
+                "width": 166.66666666666669,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 505.0,
+                    "knot_y": 484.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 505.0,
+                    "line_to_y": 480.0
+                },
+                "output_knot_number": 3,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 538.3333333333334,
+                        "knot_y": 534.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "branch",
+                        "node_key_to": "end1",
+                        "line_from_x": 538.3333333333334,
+                        "line_from_y": 538.0,
+                        "line_to_x": 621.0,
+                        "line_to_y": 564.0
+                    },
+                    {
+                        "index": 1,
+                        "knot_x": 505.0,
+                        "knot_y": 534.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "branch",
+                        "node_key_to": "python_code_executor",
+                        "line_from_x": 505.0,
+                        "line_from_y": 538.0,
+                        "line_to_x": 505.0,
+                        "line_to_y": 585.0
+                    },
+                    {
+                        "index": 2,
+                        "knot_x": 471.6666666666667,
+                        "knot_y": 534.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "branch",
+                        "node_key_to": "remote_shell",
+                        "line_from_x": 471.6666666666667,
+                        "line_from_y": 538.0,
+                        "line_to_x": 268.0,
+                        "line_to_y": 542.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "python_code_executor1": {
+            "node": {
+                "enum_node_value": "python_code_executor",
+                "name": "python_code_executor1",
+                "output_variables_key": [
+                    "list_terminal_commands",
+                    "history"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "branch"
+                ],
+                "parent_key": "iteration",
+                "evaluater_code": "list_terminal_commands = review_report.get(\"list_terminal_commands\")\nif list_terminal_commands:\n\thistory.append({\"list_terminal_commands\": list_terminal_commands})"
+            },
+            "graphic": {
+                "node_key": "python_code_executor1",
+                "x": 505.0,
+                "y": 410.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 505.0,
+                    "knot_y": 385.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 505.0,
+                    "line_to_y": 381.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 505.0,
+                        "knot_y": 435.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "python_code_executor1",
+                        "node_key_to": "branch",
+                        "line_from_x": 505.0,
+                        "line_from_y": 439.0,
+                        "line_to_x": 505.0,
+                        "line_to_y": 480.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "user_input": {
+            "node": {
+                "enum_node_value": "user_input",
+                "name": "user_input",
+                "output_variables_key": [],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "python_code_executor4"
+                ],
+                "parent_key": "iteration",
+                "user_input_source": "combo",
+                "user_input_variable_key": "user_input"
+            },
+            "graphic": {
+                "node_key": "user_input",
+                "x": 505.0,
+                "y": 783.0,
+                "width": 100,
+                "height": 50.0,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 505.0,
+                    "knot_y": 758.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 505.0,
+                    "line_to_y": 754.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 555.0,
+                        "knot_y": 783.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "user_input",
+                        "node_key_to": "python_code_executor4",
+                        "line_from_x": 559.0,
+                        "line_from_y": 783.0,
+                        "line_to_x": 629.0,
+                        "line_to_y": 662.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": true,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "ask_llm3": {
+            "node": {
+                "enum_node_value": "ask_llm",
+                "name": "ask_llm3",
+                "output_variables_key": [
+                    "review_report"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "python_code_executor1"
+                ],
+                "parent_key": "iteration",
+                "llm_api_key": "deepseek-chat",
+                "list_llm_api_key": null,
+                "is_multiple_llm": false,
+                "system_prompt": "",
+                "system_prompt_variable_key": null,
+                "system_prompt_filename": null,
+                "system_prompt_source_value": "scroll_text_editor",
+                "user_prompt": "Below is the general guide:\n$general_guide \n\nBelow is the job instructions:\n$job_instructions\n\nBelow is the history of terminal commands, your questions and user input:\n$history\n\nDo not waste time on meaningless repeating of terminal commands.\n\nBelow is the check item you prepared earlier:\n$check_item\n\nAnd below is the terminal commands you prepared to inspect/diagnose the server.\n$list_terminal_commands\n\nThe terminal output might be too long and will be showed the last.\n\nYou asked user to provide inputs or confirmation:\n$ai_prompt\n\nBelow is the input from the user:\n$user_input\n\nThe user input is only for you, not for the server. Which means, if you are waiting for a password and the user provides one, you will need to put it into the first one in \"list_terminal_commands\".\nPlease review the user input to determine whether the job is done or the next steps to take.\nThe next steps include:\n1. Ask user to provide inputs or confirmation. Put your question or decription in \"question\".\n2. Further terminal commands. Put them in \"list_terminal_commands\".\n3. If the job is done, put a brief conclusion in \"conclusion\".\n\nThe format is:\n{\"review_report\":\n{ \n  \"status\": \"done/ask_user_input/further_commands\",\n  \"list_terminal_commands\": [....],\n  \"question\":\"...\",\n  \"conclusion\": \"...\"\n}\n}\n\nThe terminal output is:\n$terminal_output",
+                "user_prompt_variable_key": null,
+                "user_prompt_filename": null,
+                "user_prompt_source_value": "scroll_text_editor",
+                "list_filepath_variable_key": null,
+                "chat_history_variable_key": null,
+                "chat_max_turns_variable_key": null,
+                "prompt_max_length_variable_key": null,
+                "temperature": 1.2,
+                "is_stream": false,
+                "is_publish": false
+            },
+            "graphic": {
+                "node_key": "ask_llm3",
+                "x": 683.0,
+                "y": 760.0,
+                "width": 100,
+                "height": 50.0,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 683.0,
+                    "knot_y": 735.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 683.0,
+                    "line_to_y": 731.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 733.0,
+                        "knot_y": 760.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "ask_llm3",
+                        "node_key_to": "python_code_executor1",
+                        "line_from_x": 737.0,
+                        "line_from_y": 760.0,
+                        "line_to_x": 505.0,
+                        "line_to_y": 381.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": true,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "std_output": {
+            "node": {
+                "enum_node_value": "std_output",
+                "name": "std_output",
+                "output_variables_key": [],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "end"
+                ],
+                "parent_key": "_workflow",
+                "prompt_source_value": "combo",
+                "prompt": "",
+                "prompt_variable_key": "final_conclusion",
+                "display_effect_str_source": "scroll_text_editor",
+                "display_effect_str": "{       \n\t \"style_name\":\"ai_message\",\n         \"is_markdown\":true,\n         \"is_typewriter\":false\n        }",
+                "display_effect_str_variable_key": null
+            },
+            "graphic": {
+                "node_key": "std_output",
+                "x": 918.0,
+                "y": 382.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 918.0,
+                    "knot_y": 357.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 918.0,
+                    "line_to_y": 353.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 918.0,
+                        "knot_y": 407.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "std_output",
+                        "node_key_to": "end",
+                        "line_from_x": 918.0,
+                        "line_from_y": 411.0,
+                        "line_to_x": 918.0,
+                        "line_to_y": 450.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "ask_llm4": {
+            "node": {
+                "enum_node_value": "ask_llm",
+                "name": "ask_llm4",
+                "output_variables_key": [
+                    "final_conclusion"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "std_output"
+                ],
+                "parent_key": "_workflow",
+                "llm_api_key": "deepseek-chat",
+                "list_llm_api_key": null,
+                "is_multiple_llm": false,
+                "system_prompt": "",
+                "system_prompt_variable_key": null,
+                "system_prompt_filename": null,
+                "system_prompt_source_value": "scroll_text_editor",
+                "user_prompt": "You are a professional server engineer and are invited to access a server, inspect and diagnose the conditions of server. \n\nBelow is the job instructions:\n$job_instructions\n\nBelow is the checklist you prepared earlier:\n$checklist\n\nBelow is the history of terminal commands, your questions and user input:\n$history\n\nAfter your interaction with the server through the checklist, you come up with a list of conclusion:\n$all_conclusion\n\nPlease summarize the list of conclusion into a final conclusion.\n\nPlease do not reply any information other than requested, since it is an agent to read your reply, not a human.",
+                "user_prompt_variable_key": null,
+                "user_prompt_filename": null,
+                "user_prompt_source_value": "scroll_text_editor",
+                "list_filepath_variable_key": null,
+                "chat_history_variable_key": null,
+                "chat_max_turns_variable_key": null,
+                "prompt_max_length_variable_key": null,
+                "temperature": 1.2,
+                "is_stream": false,
+                "is_publish": false
+            },
+            "graphic": {
+                "node_key": "ask_llm4",
+                "x": 917.0,
+                "y": 281.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 867.0,
+                    "knot_y": 281.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 863.0,
+                    "line_to_y": 281.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 917.0,
+                        "knot_y": 306.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "ask_llm4",
+                        "node_key_to": "std_output",
+                        "line_from_x": 917.0,
+                        "line_from_y": 310.0,
+                        "line_to_x": 918.0,
+                        "line_to_y": 353.0
+                    }
+                ],
+                "is_input_knot_left": true,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "python_code_executor": {
+            "node": {
+                "enum_node_value": "python_code_executor",
+                "name": "python_code_executor",
+                "output_variables_key": [
+                    "ai_prompt",
+                    "history"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "std_output2"
+                ],
+                "parent_key": "iteration",
+                "evaluater_code": "ai_prompt = review_report['question']   \nhistory.append({\"ai_prompt\": ai_prompt})"
+            },
+            "graphic": {
+                "node_key": "python_code_executor",
+                "x": 505.0,
+                "y": 614.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 505.0,
+                    "knot_y": 589.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 505.0,
+                    "line_to_y": 585.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 505.0,
+                        "knot_y": 639.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "python_code_executor",
+                        "node_key_to": "std_output2",
+                        "line_from_x": 505.0,
+                        "line_from_y": 643.0,
+                        "line_to_x": 505.0,
+                        "line_to_y": 668.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "python_code_executor2": {
+            "node": {
+                "enum_node_value": "python_code_executor",
+                "name": "python_code_executor2",
+                "output_variables_key": [
+                    "history"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "remote_shell"
+                ],
+                "parent_key": "iteration",
+                "evaluater_code": "history = history or []\nhistory.append( {\"check_item\":check_item})\n"
+            },
+            "graphic": {
+                "node_key": "python_code_executor2",
+                "x": 169.0,
+                "y": 542.0,
+                "width": 100,
+                "height": 50.0,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 169.0,
+                    "knot_y": 517.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 169.0,
+                    "line_to_y": 513.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 219.0,
+                        "knot_y": 542.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "python_code_executor2",
+                        "node_key_to": "remote_shell",
+                        "line_from_x": 223.0,
+                        "line_from_y": 542.0,
+                        "line_to_x": 268.0,
+                        "line_to_y": 542.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": true,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "user_input1": {
+            "node": {
+                "enum_node_value": "user_input",
+                "name": "user_input1",
+                "output_variables_key": [],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "ask_llm"
+                ],
+                "parent_key": "_workflow",
+                "user_input_source": "combo",
+                "user_input_variable_key": "job_instructions"
+            },
+            "graphic": {
+                "node_key": "user_input1",
+                "x": 426.0,
+                "y": 87.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 376.0,
+                    "knot_y": 87.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 372.0,
+                    "line_to_y": 87.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 426.0,
+                        "knot_y": 112.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "user_input1",
+                        "node_key_to": "ask_llm",
+                        "line_from_x": 426.0,
+                        "line_from_y": 116.0,
+                        "line_to_x": 426.0,
+                        "line_to_y": 142.0
+                    }
+                ],
+                "is_input_knot_left": true,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "python_code_executor3": {
+            "node": {
+                "enum_node_value": "python_code_executor",
+                "name": "python_code_executor3",
+                "output_variables_key": [
+                    "general_guide"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "std_output1"
+                ],
+                "parent_key": "_workflow",
+                "evaluater_code": "general_guide =\"\"\"\nYou are a professional server engineer and are invited to access a server, inspect/diagnose/correct the conditions of server via multi-turn dialogs with the server and/or user. \nI will first ask you to provide a checklist.\nThen I will iterate through the checklist and give you a check item to create a list of commands.\nThe list of commands will be sent to the terminal of the target server via remote shell protocol.\nThe server response will be sent to you for a review. You should generate a review report indicating the next steps (done/ask_user_input/further_commands) to go. \nFinally you will summarize the results of inspect/diagnose/correct.\nThe sudo password might be provided, in case you need it for using a command with a higher permission. Such as:\necho <password>  sudo -S <command>\nIf you do not see a sudo password, you can ask for it.\nIf the sudo password is not available or not effective, user an alternative commands not requiring a sudo password or skip the commands requiring a sudo password and report it in the final conclusion. \n\nPlease stick to the JSON format requested and do not reply any information other than requested,   since it is an agent to read your reply, not a human.\nDo not delete anything without my permission.\n\"\"\""
+            },
+            "graphic": {
+                "node_key": "python_code_executor3",
+                "x": 135.0,
+                "y": 125.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 135.0,
+                    "knot_y": 100.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 135.0,
+                    "line_to_y": 96.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 135.0,
+                        "knot_y": 150.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "python_code_executor3",
+                        "node_key_to": "std_output1",
+                        "line_from_x": 135.0,
+                        "line_from_y": 154.0,
+                        "line_to_x": 201.0,
+                        "line_to_y": 177.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "python_code_executor4": {
+            "node": {
+                "enum_node_value": "python_code_executor",
+                "name": "python_code_executor4",
+                "output_variables_key": [
+                    "history"
+                ],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "ask_llm3"
+                ],
+                "parent_key": "iteration",
+                "evaluater_code": "history.append({\"user_input\": user_input})                             \n                 "
+            },
+            "graphic": {
+                "node_key": "python_code_executor4",
+                "x": 683.0,
+                "y": 662.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 633.0,
+                    "knot_y": 662.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 629.0,
+                    "line_to_y": 662.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 683.0,
+                        "knot_y": 687.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "python_code_executor4",
+                        "node_key_to": "ask_llm3",
+                        "line_from_x": 683.0,
+                        "line_from_y": 691.0,
+                        "line_to_x": 683.0,
+                        "line_to_y": 731.0
+                    }
+                ],
+                "is_input_knot_left": true,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "std_output1": {
+            "node": {
+                "enum_node_value": "std_output",
+                "name": "std_output1",
+                "output_variables_key": [],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "user_input1"
+                ],
+                "parent_key": "_workflow",
+                "prompt_source_value": "scroll_text_editor",
+                "prompt": "請輸入對於本次檢查的特殊指示，如果沒有，直接按 Enter/Return 鍵 或 \"輸入\"鍵。",
+                "prompt_variable_key": null,
+                "display_effect_str_source": "scroll_text_editor",
+                "display_effect_str": "\n        {\n         \"style_name\": \"ai_message\",\n         \"is_markdown\":false,\n         \"is_typewriter\":false\n        }\n        ",
+                "display_effect_str_variable_key": null
+            },
+            "graphic": {
+                "node_key": "std_output1",
+                "x": 255.0,
+                "y": 177.0,
+                "width": 100,
+                "height": 50.0,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 205.0,
+                    "knot_y": 177.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 201.0,
+                    "line_to_y": 177.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 305.0,
+                        "knot_y": 177.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "std_output1",
+                        "node_key_to": "user_input1",
+                        "line_from_x": 309.0,
+                        "line_from_y": 177.0,
+                        "line_to_x": 372.0,
+                        "line_to_y": 87.0
+                    }
+                ],
+                "is_input_knot_left": true,
+                "is_output_knot_right": true,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        },
+        "std_output2": {
+            "node": {
+                "enum_node_value": "std_output",
+                "name": "std_output2",
+                "output_variables_key": [],
+                "next_nodes_number": 1,
+                "list_next_node_key": [
+                    "user_input"
+                ],
+                "parent_key": "iteration",
+                "prompt_source_value": "combo",
+                "prompt": "",
+                "prompt_variable_key": "ai_prompt",
+                "display_effect_str_source": "scroll_text_editor",
+                "display_effect_str": "\n        {\n         \"style_name\":\"ai_message\",\n         \"is_markdown\":false,\n         \"is_typewriter\":false\n        }\n        ",
+                "display_effect_str_variable_key": null
+            },
+            "graphic": {
+                "node_key": "std_output2",
+                "x": 505.0,
+                "y": 697.0,
+                "width": 100.0,
+                "height": 50,
+                "input_knot": {
+                    "index": 0,
+                    "knot_x": 505.0,
+                    "knot_y": 672.0,
+                    "knot_diameter": 8,
+                    "node_key_from": "",
+                    "node_key_to": "",
+                    "line_from_x": 0,
+                    "line_from_y": 0,
+                    "line_to_x": 505.0,
+                    "line_to_y": 668.0
+                },
+                "output_knot_number": 1,
+                "list_output_knot": [
+                    {
+                        "index": 0,
+                        "knot_x": 505.0,
+                        "knot_y": 722.0,
+                        "knot_diameter": 8,
+                        "node_key_from": "std_output2",
+                        "node_key_to": "user_input",
+                        "line_from_x": 505.0,
+                        "line_from_y": 726.0,
+                        "line_to_x": 505.0,
+                        "line_to_y": 754.0
+                    }
+                ],
+                "is_input_knot_left": false,
+                "is_output_knot_right": false,
+                "fill_color": "#E0E0E0",
+                "outline_color": "#404040",
+                "outline_selected_color": "#FF6600",
+                "outline_width": "1.0",
+                "label_width": "60.0",
+                "label_height": "30.0",
+                "label_font": "Arial",
+                "label_font_size": "10"
+            }
+        }
+    }
+}

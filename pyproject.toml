@@ -1,6 +1,64 @@
 [project]
 name = "wofa-runner"
 version = "0.1.0"
-description = "Add your description here"
-requires-python = ">=3.13"
-dependencies = []
+description = "Runner for Wofa .wfa file"
+authors = [
+    {name = "Wofa Team", email = "wofa@syntak.net"}
+]
+
+dependencies = [
+    "cairosvg",
+    "pandas>=1.5.0",
+    "openpyxl>=3.0.0",
+    "SpeechRecognition>=3.10.0",
+     "sentence-transformers",
+    "pyttsx3>=2.90",
+    "requests>=2.28.0",
+    "fastapi",
+    "lancedb",
+    "matplotlib (>=3.10.3)",
+    "mermaid-py >= 0.1.0",
+    "msoffcrypto-tool",
+    #"python-dateutil>=2.8.0",
+    "Pillow>=9.0.0",
+    #"python-docx>=0.8.0",
+    "pypubsub",
+    "PyAudio>=0.2.11; sys_platform == 'win32'", # 平台特定依賴
+    "pyinstaller",
+    #"sounddevice>=0.4.6",
+    "py_libraries",
+    'py_llm_api',
+    'py_workflow',
+    'wofa_server',
+]
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+
+windows = [
+    "pywin32>=311",
+    "pywinauto",  # 如果需要GUI自動化
+]
+
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0"
+]
+
+
+[tool.uv.sources]
+# 這裡的路徑是相對於 pyproject.toml 所在的專案根目錄
+wofa_server = { path = "../wofa_server", editable = true }
+py_libraries = { path = "../../Library/python/py_libraries", editable = true }
+py_llm_api = { path = "../../Library/python/py_llm_api", editable = true }
+py_workflow = { path = "../../Library/python/py_workflow", editable = true }
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 100
+target-version = ['py313']
+

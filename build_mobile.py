@@ -14,9 +14,9 @@ ROOT_DIR = Path(__file__).parent
 SRC_DIR = ROOT_DIR / "src"
 MOBILE_DIR = ROOT_DIR / "mobile"
 
-APP_NAME = "SmartPal"
+APP_NAME = "WfaRunner"
 APP_VERSION = "1.0.0"
-APP_PACKAGE = "com.example.smartpal"
+APP_PACKAGE = "com.syntak.wfarunner"
 
 
 def check_dependencies():

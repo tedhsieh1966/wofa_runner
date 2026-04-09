@@ -33,7 +33,7 @@ def setup_logging():
     handlers = []
 
     # 1. 檔案日誌 (最穩定)
-    handlers.append(logging.FileHandler(log_dir / "smartpal.log", encoding='utf-8'))
+    handlers.append(logging.FileHandler(log_dir / "wofa_runner.log", encoding='utf-8'))
 
     # 2. 控制台日誌 (僅在有 stdout 時加入)
     if sys.stdout is not None:
@@ -53,30 +53,16 @@ def setup_logging():
 
     logging.info("日誌系統初始化完成")
 
-#def setup_logging():
-#    """設置日誌系統"""
-#    log_dir = current_dir.parent / "logs"
-#    log_dir.mkdir(exist_ok=True)
-#
-#    logging.basicConfig(
-#        level=logging.INFO,
-#        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-#        handlers=[
-#            logging.FileHandler(log_dir / "smartpal.log", encoding='utf-8'),
-#            logging.StreamHandler(sys.stdout)
-#        ]
-#    )
-    
     # 設置第三方庫的日誌級別
     logging.getLogger('urllib3').setLevel(logging.WARNING)
     logging.getLogger('speech_recognition').setLevel(logging.WARNING)
+
 
 def check_dependencies():
     """檢查依賴"""
     try:
         import tkinter
         import pandas
-        import speech_recognition
         import pyttsx3
         import requests
         import openpyxl
@@ -84,7 +70,7 @@ def check_dependencies():
     except ImportError as e:
         print(f"缺少依賴庫: {e}")
         print("請安裝所需的依賴庫：")
-        print("pip install pandas speechrecognition pyttsx3 requests openpyxl")
+        print("pip install pandas pyttsx3 requests openpyxl")
         return False
 
 def main():
@@ -95,16 +81,16 @@ def main():
     
     # 設置日誌
     setup_logging()
-    logger = logging.getLogger("SmartPal")
+    logger = logging.getLogger("Wofa_Runner")
     
     try:
-        logger.info("啟動 SmartPal 應用程式 main")
+        logger.info("啟動 Wofa_Runner 應用程式 main")
         
         # 導入應用程式
-        from app import SmartPalApp
+        from app import WofaRunnerApp
         
         # 創建並運行應用程式
-        app = SmartPalApp()
+        app = WofaRunnerApp()
         app.run()
         
     except KeyboardInterrupt:
@@ -119,7 +105,7 @@ def main():
             root = tk.Tk()
             root.withdraw()
             messagebox.showerror(
-                "SmartPal 啟動錯誤",
+                "WofaRunner 啟動錯誤",
                 f"應用程式啟動失敗：{str(e)}\n\n請檢查日誌文件獲取詳細信息。"
             )
             root.destroy()

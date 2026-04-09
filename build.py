@@ -139,6 +139,7 @@ def build_app():
             f'--name={APP_NAME}',
             f'--icon={FP_APP_ICON}',
             f'--add-data={FP_LANGUAGES}{SEPARATOR}.',
+            f'--add-data={FP_WORKFLOW_LANGUAGES}{SEPARATOR}.',
             f'--add-data={FP_APP_ICON}{SEPARATOR}.',
          #   f'--path={PY_LIBRARIES_PYD_DIR}',
          #   f'--path={PY_LLM_API_PYD_DIR}',

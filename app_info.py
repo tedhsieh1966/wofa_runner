@@ -13,10 +13,10 @@ WOFA_IDE_PYD_DIR = PROJECTS_DIR/"python" / "wofa_ide" / "src" / "pyd"
 WOFA_SERVER_PYD_DIR = PROJECTS_DIR/"python" / "wofa_server" / "src" / "pyd"
 
 IS_LITE = False
-BRIEF = "SmartPal"
-DESCRIPTION = "使用LLM的智慧助手"
-APP_CAPS = "SmartPal"
-APP = "smartpal"
+BRIEF = "WfaRunner"
+DESCRIPTION = "Wfa 執行器"
+APP_CAPS = "WfaRunner"
+APP = "wfa_runner"
 APP_DESKTOP_LINK = APP_CAPS + ".lnk"
 APP_WIN = APP if not IS_LITE else APP + "_lite"
 APP_MAC = APP + "_mac" if not IS_LITE else APP + "_mac_lite"
@@ -56,4 +56,7 @@ else:  # Linux
 FP_APP_PY = f"{ROOT_DIR}/src/main.py"
 FP_APP_ICON = f"{ROOT_DIR}/src/{APP_ICON}"
 FP_LANGUAGES = f"{ROOT_DIR}/src/{LANGUAGES}"
+
+from py_workflow import get_workflow_languages_xlsx_path
+FP_WORKFLOW_LANGUAGES = get_workflow_languages_xlsx_path()
 

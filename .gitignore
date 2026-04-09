@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+tmp/
+.venv/
+
+# Wheel build output (private libraries)
+dist_whl/
+
+# Local pyproject.toml backup (created by publish_github.bat)
+pyproject.toml.local
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.user
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Logs
+logs/
+
+# PyInstaller artifacts
+*.spec
+wofa/
+videos/
+uv.lock

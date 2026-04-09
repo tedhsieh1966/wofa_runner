@@ -1,0 +1,70 @@
+# pyproject.toml.github
+#
+# This is the PUBLIC version for GitHub publishing.
+# It replaces local [tool.uv.sources] paths with pre-compiled wheel URLs
+# hosted on https://github.com/tedhsieh1966/wofa-dist/releases
+#
+# WHEN TO UPDATE:
+#   Each time you bump a library version and re-run that library's build_whl.bat,
+#   update the corresponding URL below with the new version and new wheel filename.
+#
+# HOW TO USE:
+#   Run publish_github.bat — it swaps this file in as pyproject.toml before pushing,
+#   then restores your local pyproject.toml afterward.
+
+[project]
+name = "wofa-runner"
+version = "0.1.0"
+description = "Runner for Wofa .wfa file"
+authors = [
+    {name = "Ted Hsieh", email = "ted1966@gmail.com"}
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "cairosvg",
+    "pandas>=1.5.0",
+    "openpyxl>=3.0.0",
+    "SpeechRecognition>=3.10.0",
+    "sentence-transformers",
+    "pyttsx3>=2.90",
+    "requests>=2.28.0",
+    "fastapi",
+    "lancedb",
+    "matplotlib>=3.10.3",
+    "mermaid-py>=0.1.0",
+    "msoffcrypto-tool",
+    "Pillow>=9.0.0",
+    "pypubsub",
+    "PyAudio>=0.2.11; sys_platform == 'win32'",
+    "pyinstaller",
+    # --- Private libraries (pre-compiled wheels, hosted on tedhsieh1966/wofa-dist) ---
+    # Update these URLs each time you release a new library version via build_whl.bat.
+    "py_libraries @ https://github.com/tedhsieh1966/wofa-dist/releases/download/py-libraries-v1.0.3/py_libraries-1.0.3-cp313-cp313-win_amd64.whl",
+    "py_llm_api @ https://github.com/tedhsieh1966/wofa-dist/releases/download/py-llm-api-v1.0.3/py_llm_api-1.0.3-cp313-cp313-win_amd64.whl",
+    "py_workflow @ https://github.com/tedhsieh1966/wofa-dist/releases/download/py-workflow-v1.0.3/py_workflow-1.0.3-cp313-cp313-win_amd64.whl",
+    # TODO: replace with wheel URL once wofa_server is published to wofa-dist
+    # "wofa_server @ https://github.com/tedhsieh1966/wofa-dist/releases/download/wofa-server-vX.X.X/wofa_server-X.X.X-cp313-cp313-win_amd64.whl",
+]
+
+[project.optional-dependencies]
+windows = [
+    "pywin32>=311",
+    "pywinauto",
+]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# No [tool.uv.sources] — wheel URLs in dependencies replace local paths above.
+
+[tool.black]
+line-length = 100
+target-version = ['py313']

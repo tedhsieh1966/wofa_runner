@@ -52,6 +52,22 @@ setx DEEPSEEK_API_KEY "your-deepseek-key-here"
 2. 點擊「開啟」選取 `.wfa` 工作流程檔案。
 3. 點擊「執行」開始執行流程。
 
+#### CLI 模式
+
+加上 `-cli`（或 `--cli`）旗標即可在終端機執行工作流程，不會開啟 GUI：
+
+```bat
+wfa_runner.exe -cli path\to\workflow.wfa
+```
+
+- LLM 回應與節點 `std_output` 會輸出到 **stdout**。
+- 工作流程要求使用者輸入時，提示文字會輸出到 **stderr**，並從 **stdin** 讀取一行。
+- 支援標準的管線/重新導向，例如：
+
+  ```bat
+  wfa_runner.exe -cli workflow.wfa < input.txt > output.txt
+  ```
+
 ### 🔧 從原始碼建置（訂閱者）
 
 若您擁有私有函式庫的存取權限，可從原始碼重新編譯。
@@ -148,6 +164,22 @@ Other supported LLM keys can be set the same way (e.g. `OPENAI_API_KEY`, `ANTHRO
 1. Launch WFA Runner.
 2. Click **Open** and select a `.wfa` workflow file.
 3. Click **Run** to start execution.
+
+#### CLI Mode
+
+Pass the `-cli` (or `--cli`) flag to run a workflow in the terminal without opening the GUI:
+
+```bat
+wfa_runner.exe -cli path\to\workflow.wfa
+```
+
+- LLM responses and node `std_output` are written to **stdout**.
+- When the workflow needs user input, the prompt is written to **stderr** and a line is read from **stdin**.
+- Standard piping/redirection is supported, e.g.:
+
+  ```bat
+  wfa_runner.exe -cli workflow.wfa < input.txt > output.txt
+  ```
 
 ### 🔧 Building from Source (Subscribers)
 

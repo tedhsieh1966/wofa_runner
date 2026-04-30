@@ -58,14 +58,16 @@ def setup_logging():
     logging.getLogger('speech_recognition').setLevel(logging.WARNING)
 
 
-def check_dependencies():
+def check_dependencies(cli_mode: bool = False):
     """檢查依賴"""
     try:
-        import tkinter
+        if not cli_mode:
+            import tkinter
         import pandas
-        import pyttsx3
         import requests
         import openpyxl
+        if not cli_mode:
+            import pyttsx3
         return True
     except ImportError as e:
         print(f"缺少依賴庫: {e}")
@@ -73,45 +75,76 @@ def check_dependencies():
         print("pip install pandas pyttsx3 requests openpyxl")
         return False
 
+
+def _parse_cli_flag(argv):
+    """從 argv 中找出 -cli 旗標。
+
+    支援的形式（皆相容於現有的 sys.argv[1] = .wfa 路徑慣例）：
+        wofa_runner -cli xxx.wfa
+        wofa_runner xxx.wfa -cli
+        wofa_runner --cli xxx.wfa
+    回傳 (cli_mode, new_argv)。new_argv 已移除 -cli 旗標。
+    """
+    cli_mode = False
+    new_argv = [argv[0]]
+    for arg in argv[1:]:
+        if arg in ("-cli", "--cli"):
+            cli_mode = True
+        else:
+            new_argv.append(arg)
+    return cli_mode, new_argv
+
+
 def main():
     """主函數"""
-    # 檢查依賴
-    if not check_dependencies():
+    cli_mode, new_argv = _parse_cli_flag(sys.argv)
+    sys.argv = new_argv
+
+    if not check_dependencies(cli_mode=cli_mode):
         sys.exit(1)
-    
-    # 設置日誌
+
     setup_logging()
     logger = logging.getLogger("Wofa_Runner")
-    
+
     try:
+        if cli_mode:
+            logger.info("啟動 Wofa_Runner CLI 模式")
+            from cli_app import WofaRunnerCliApp
+
+            if len(sys.argv) < 2:
+                print("用法: wofa_runner -cli <path/to/file.wfa>", file=sys.stderr)
+                sys.exit(2)
+
+            app = WofaRunnerCliApp()
+            sys.exit(app.run())
+
         logger.info("啟動 Wofa_Runner 應用程式 main")
-        
-        # 導入應用程式
         from app import WofaRunnerApp
-        
-        # 創建並運行應用程式
+
         app = WofaRunnerApp()
         app.run()
-        
+
     except KeyboardInterrupt:
         logger.info("收到中斷信號，程式正常退出")
     except Exception as e:
         logger.error(f"應用程式啟動失敗 main: {str(e)}")
-        
-        # 顯示錯誤對話框
-        try:
-            import tkinter as tk
-            from tkinter import messagebox
-            root = tk.Tk()
-            root.withdraw()
-            messagebox.showerror(
-                "WofaRunner 啟動錯誤",
-                f"應用程式啟動失敗：{str(e)}\n\n請檢查日誌文件獲取詳細信息。"
-            )
-            root.destroy()
-        except:
-            pass
-            
+
+        if cli_mode:
+            print(f"應用程式啟動失敗：{str(e)}", file=sys.stderr)
+        else:
+            try:
+                import tkinter as tk
+                from tkinter import messagebox
+                root = tk.Tk()
+                root.withdraw()
+                messagebox.showerror(
+                    "WofaRunner 啟動錯誤",
+                    f"應用程式啟動失敗：{str(e)}\n\n請檢查日誌文件獲取詳細信息。"
+                )
+                root.destroy()
+            except:
+                pass
+
         sys.exit(1)
 
 if __name__ == "__main__":
